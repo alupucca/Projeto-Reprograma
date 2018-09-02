@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Quiz Code like a GIRL </title>
+    <link rel="stylesheet" type: "text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+
+<body>
+    <div class="head scrolling">
+        <h1> Quiz </h1>
+        <br/>
+    </div>
+    <div class="container">
+        <h2> 1. O que significa a sigla HTML? </h2>
+        <div class="gruporesposta">
+            <div class="resposta">
+                <input type="radio" name="resposta1" id="1A" />
+                <label for="1A">A. Hyperlinks and Text Markup Language </label>
+            </div>
+            <div class="resposta">
+                <input type="radio" name="resposta1" id="1B" />
+                <label for="1B">B. Hyper Text Markup Language </label>
+            </div>
+            <div class="resposta">
+                <input type="radio" name="resposta1" id="1C" />
+                <label for="1C">C. Home Tool Markup Language </label>
+
+            </div>
+
+        </div>
+        <h2> 2. O que significa a sigla CSS? </h2>
+        <div class="gruporesposta">
+            <div class="resposta">
+                <input type="radio" name="resposta2" id="2A" />
+                <label for="2A"> A. Creative Style Sheets</label>
+            </div>
+            <div class="resposta">
+                <input type="radio" name="resposta2" id="2B" />
+                <label for="2B"> B. Cascading Style Sheets</label>
+            </div>
+            <div class="resposta">
+                <input type="radio" name="resposta2" id="2C" />
+                <label for="2C"> C. Colorful Style Sheets</label>
+            </div>
+        </div>
+        <h2> 3. Dentro de qual elemento HTML nós colocamos o JavaScript? </h2>
+        <div class="gruporesposta">
+            <div class="resposta">
+                <input type="radio" name="resposta3" id="3A" />
+                <label for="3A"> A. script</label>
+            </div>
+            <div class="resposta">
+                <input type="radio" name="resposta3" id="3B" />
+                <label for="3B"> B. js </label>
+            </div>
+            <div class="resposta">
+                <input type="radio" name="resposta3" id="3C" />
+                <label for="3C"> C. javascript </label>
+
+            </div>
+        </div>
+        <div class="caixa-submit">
+            <br/>
+            <br/>
+            <button class="botao" type="button" id="botao"> Manda aí! </button>
+        </div>
+    </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p  class="texto" id="result"></p>
+        </div>
+
+    </div>
+    <script>
+        var countRespsCertas = 0;
+        function acaobotao() {
+            var items1 = document.getElementsByName("resposta1");
+            var items2 = document.getElementsByName("resposta2");
+            var items3 = document.getElementsByName("resposta3");
+
+            if (items1[1].checked == true) {
+                countRespsCertas = countRespsCertas + 1;
+            }
+            if (items2[1].checked == true) {
+                countRespsCertas = countRespsCertas + 1;
+            }
+            if (items3[0].checked == true) {
+                countRespsCertas = countRespsCertas + 1;
+            }
+
+            var result = document.getElementById("result");
+            result.innerText = 'Você acertou ' + countRespsCertas + ' respostas';
+            if (countRespsCertas == 0) {
+                result.innerText = 'Você não acertou nenhuma resposta';
+                countRespsCertas = 0;
+            }
+        }
+
+        var modal = document.getElementById('myModal');
+        var btn = document.getElementById("botao");
+        var span = document.getElementsByClassName("close")[0];
+        btn.onclick = function () {
+            acaobotao();
+            modal.style.display = "block";
+        }
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
