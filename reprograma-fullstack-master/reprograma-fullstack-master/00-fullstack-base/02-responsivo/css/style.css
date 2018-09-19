@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url("../img/computador.jpg");
+    background-image: url("../img/Anaencontro.jpg");
     font-family: 'Lato', Arial, Helvetica, sans-serif;
     overflow: hidden;
     margin: 0%;
@@ -66,7 +66,8 @@ h2 {
 .sobre-conteudo__redes-sociais img {
     width: 60px;
     height: 60px;
-    margin-left: 40px;
+    margin-right: 15px;
+    filter: hue-rotate(268deg);
 }
 
 @media screen and (max-width: 780px) {
@@ -91,8 +92,8 @@ h2 {
         margin-left: 40px;
     }
     body {
-        background-image: url("../img/computador.jpg");
+        background-image: url("../img/Anaencontro.jpg");
        height: 100vh;
-    
+       
     }
  }
